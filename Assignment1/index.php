@@ -19,23 +19,23 @@
     $festivals = mysqli_query($connect, $query);
     ?>
 
-    <div class="row">
-        <?php while ($festival = mysqli_fetch_assoc($festivals)) { ?>
-            <div class="col-md-6">
-                <div class="card mb-4 shadow-sm">
-                    <img src="<?= htmlspecialchars($festival['img_url']); ?>" class="card-img-top" alt="Image of <?= htmlspecialchars($festival['name']); ?>">
-                    <div class="card-body">
-                        <h4 class="card-title"><?= htmlspecialchars($festival['name']); ?></h4>
-                        <h6 class="text-muted"><?= date('F j, Y', strtotime($festival['date'])); ?></h6>
-                        <p><strong>Genre:</strong> <?= htmlspecialchars($festival['genre']); ?></p>
-                        <p><strong>Location:</strong> <?= htmlspecialchars($festival['location']); ?></p>
-                        <p><?= htmlspecialchars($festival['description']); ?></p>
-                        <a href="performers.php?festival_id=<?= $festival['festival_id']; ?>" class="btn btn-primary">View Performers</a>
-                    </div>
+<div class="row">
+    <?php while ($festival = mysqli_fetch_assoc($festivals)) { ?>
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4 shadow-sm">
+                <img src="<?= htmlspecialchars($festival['img_url']); ?>" class="card-img-top" alt="Image of <?= htmlspecialchars($festival['name']); ?>">
+                <div class="card-body d-flex flex-column">
+                    <h4 class="card-title"><?= htmlspecialchars($festival['name']); ?></h4>
+                    <h6 class="text-muted"><?= date('F j, Y', strtotime($festival['date'])); ?></h6>
+                    <p class="card-details"><strong>Genre:</strong> <?= htmlspecialchars($festival['genre']); ?></p>
+                    <p class="card-details"><strong>Location:</strong> <?= htmlspecialchars($festival['location']); ?></p>
+                    <p class="card-details"><?= htmlspecialchars($festival['description']); ?></p>
+                    <a href="performers.php?festival_id=<?= $festival['festival_id']; ?>" class="btn btn-primary mt-auto">View Performers</a>
                 </div>
             </div>
-        <?php } ?>
-    </div>
+        </div>
+    <?php } ?>
+</div>
 
 </div>
 

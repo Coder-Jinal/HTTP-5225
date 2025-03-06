@@ -38,20 +38,18 @@
     $performers = mysqli_query($connect, $performerQuery);
     ?>
 
-    <div class="row">
-        <?php while ($performer = mysqli_fetch_assoc($performers)) { ?>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title"><?= htmlspecialchars($performer['name']); ?></h4>
-                        <p><strong>Country:</strong> <?= htmlspecialchars($performer['country']); ?></p>
-                        <p><strong>Debut Year:</strong> <?= htmlspecialchars($performer['debute_year']); ?></p>
-                        <p><strong>Age:</strong> <?= htmlspecialchars($performer['age']); ?></p>
-                    </div>
-                </div>
-            </div>
-        <?php } ?>
-    </div>
+<div class="performer-list">
+    <?php while ($performer = mysqli_fetch_assoc($performers)) { ?>
+        <div class="performer-card">
+            <h4 class="performer-name"><?= htmlspecialchars($performer['name']); ?></h4>
+            <p class="performer-details"><strong>Birth Date:</strong> <?= htmlspecialchars($performer['birthdate']); ?></p>
+            <p class="performer-details"><strong>Country:</strong> <?= htmlspecialchars($performer['country']); ?></p>
+            <p class="performer-details"><strong>Debut Year:</strong> <?= htmlspecialchars($performer['debute_year']); ?></p>
+            <p class="performer-details"><strong>Age:</strong> <?= htmlspecialchars($performer['age']); ?></p>
+        </div>
+    <?php } ?>
+</div>
+
 
 </div>
 

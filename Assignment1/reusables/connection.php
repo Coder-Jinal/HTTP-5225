@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$database = 'musicfest';
+$host = 'sql308.infinityfree.com';
+$user = 'if0_38462982';
+$password = 'assignment1php';
+$database = 'if0_38462982_Musicfest';
 
 $connect = mysqli_connect($host, $user, $password, $database);
 

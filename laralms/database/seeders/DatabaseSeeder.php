@@ -21,12 +21,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        Student::factory()->create([
-            'fname' => 'Jinal',
-            'lname' => 'Patel',
-            'email' => 'jinal@gmail.com'
-        ]); 
+        Student::factory(50) -> create();
 
-        Student::factory(100) -> create();
+        Course::factory(5) -> create();
     }
 }
